@@ -9,8 +9,7 @@ function App() {
   const [slides, setSlides] = useState([]);
   const getSlides = async () => {
     const response = await axios.get(`http://localhost:8080/fetchData`);
-    console.log(response.data);
-    setSlides(response.data);
+    setSlides(response?.data);
   };
   useEffect(() => {
     getSlides();
